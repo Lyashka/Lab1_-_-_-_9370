@@ -1,0 +1,256 @@
+
+html,
+body{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    border-collapse: collapse;
+}
+
+
+
+.menu{
+    width: 325px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    left: 80%;
+}
+
+.slidecontainer {
+    width: 80%; /* Width of the outside container */
+    margin-left: 10%;
+    margin-top: 30px;
+    display: block;
+    position: absolute;
+    top: 47%;
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    margin-top: 15px;
+    width: 325px; /* Full-width */
+    height: 20px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 100px;
+  }
+  
+  .slider:hover {
+    opacity: 1; 
+  }
+  
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 30px; /* Set a specific slider handle width */
+    height: 30px; /* Slider handle height */
+    background: #023370; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 100px;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; 
+    background: #023370; 
+    cursor: pointer; 
+  }
+
+  .add_value{
+    min-width: auto;
+    font-size: 20px;
+    max-width: 150px;
+    height: 28px;
+    margin-top: 10px;
+    padding-left: 8px;
+    border: 1px solid rgb(128, 128, 128, 0.12); 
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(128, 128, 128, 0.15);
+    cursor: pointer;
+  }
+
+  .add_value:focus {
+    outline: 0;
+    border: 1px solid rgb(128, 128, 128, 0.52); 
+  }
+  
+  .add_value::placeholder {
+    opacity: 0.4;
+    
+  }
+  
+  .XY{
+    border-radius: 15px;
+  }
+
+  .shluz{
+    border: 3px solid rgb(128, 128, 128, 0.12)
+  }
+
+  .agree{
+    min-width: auto;
+    font-size: 20px;
+    width: 160px;
+    height: 30px;
+    margin-top: 10px;
+    padding-left: 8px;
+    border: 0px;
+    text-align: center;
+    background-color:#e0e0e0;
+    vertical-align: middle;
+    border: 1px solid rgb(128, 128, 128, 0.12);
+    background-color: rgb(128, 128, 128, 0.15);
+    box-shadow: 0 0 1px 1px rgb(128 128 128 / 10%);
+    -webkit-transition: .2s;
+    transition:  .2s;
+  }
+
+  .agree:hover{
+    background-color: rgb(128, 128, 128, 0.20);
+    
+  }
+
+  .agree:focus {
+    outline: 0;
+    background-color: rgb(128, 128, 128, 0.25); 
+    animation: 0.6s;
+  }
+  /* Кординаты */
+  .coordinate-plane {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .coordinate-plane__x {
+    position: inherit;
+    display: block;
+    top:50%;
+    width: 100%;
+    height: 3px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(88, 88, 88);
+    transform: translateY(-50%);
+  }
+  .coordinate-plane__y {
+    position:inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3px;
+    height: 99.2%;
+    background-color: rgb(88, 88, 88);
+    transform: translateX(-50%);
+    
+  }
+
+  .circle{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 730px;
+    height: 730px;
+    
+    border-radius: 100%;
+    margin-top: 70px;
+  }
+
+  .cir{
+    position: relative;
+  }
+  .icon{
+    width: 50px; 
+    height: 50px;
+    transform: rotate(0deg);
+    position: absolute; 
+    fill:#023370;
+  }
+
+  .axis {
+    --c: 10;
+    --cx: 5;
+    --cy: 5;
+    --dsize: 10;
+    --dcolor: #369;
+    --size: 728px;
+    position: absolute;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 100%;
+    width: var(--size);
+    height: 0;
+    padding-top: var(--size);
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    background-image:
+      linear-gradient(#0000 calc(var(--cy) * 100% / var(--c) - 1px), #0008 0 calc(var(--cy) * 100% / var(--c) + 1px), transparent 0),
+      linear-gradient(to right, #0000 calc(var(--cx) * 100% / var(--c) - 1px), #0008 0 calc(var(--cx) * 100% / var(--c) + 1px), transparent 0),
+      repeating-linear-gradient(#0002 0 0.5px, #0000 0 calc(100% / var(--c) - 0.5px), #0002 0 calc(100% / var(--c))),
+      repeating-linear-gradient(to right, #0002 0 0.5px, #0000 0 calc(100% / var(--c) - 0.5px), #0002 0 calc(100% / var(--c)));
+  }
+  
+  .axis.no-overflow {
+    overflow: hidden;
+  }
+
+  .mark{
+    position: absolute;
+    width: 2px;
+    height: 2.5px;
+    background-color:rgba(0,0,0,0.9);
+    border-radius: 100%;
+    border: 2px solid rgba(0,0,0,0.9);
+    margin: 20px;
+    line-height:30px;
+  }
+
+  .text{
+    width: 325px;
+    font-size: 22px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 550;
+  }
+
+  .dot{
+    background-color: red;
+    height: 7px;
+    width: 7px;
+    border-radius:30px
+  }
+
+  .text{
+    width: 325px;
+    font-size: 22px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    
+  }
+
+  .text2{
+    position: relative;
+    font-size: 18px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    top:7px;
+    
+  }
+  .flex{
+    display: flex;
+    flex-direction: row;
+    width: 330px;
+    margin-bottom: 10px;
+  }
